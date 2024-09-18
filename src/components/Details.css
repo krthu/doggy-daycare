@@ -1,17 +1,75 @@
 .details-container {
     display: flex;
     flex-direction: column;
- 
+
+
 }
 
 .large-profile-image {
     aspect-ratio: 1;
     border-radius: 50%;
     border: 1px solid lightgray;
+    max-width: 300px;
+    align-self: center;
+}
+
+
+
+.information-section{
+    padding: 10px;
+}
+
+.name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
 
 }
 
-h3 {
-    font-size: 1.5rem;
+.gender-span {
+    /* border: 1px solid black;
+    border-radius: 50%; */
+    font-size: 2rem;
+
+    margin-left: 10px;
+
+    
 }
 
+.back-arrow{
+    align-self: flex-start;
+    font-size: 2rem;
+    padding: 5px;
+
+}
+
+.back-link{
+    align-self: flex-start;
+}
+
+
+.details-info-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 5px;
+    border-bottom: 1px solid lightgray; 
+    padding-inline: 5px;
+}
+
+.details-label {
+   
+    margin-right: 5px;
+    font-size: 1rem;
+}
+
+.details-value{
+    text-transform: capitalize;
+    font-size: 1.2rem;
+}
+
+.large-profile-image.details-present {
+    border: 5px solid green;
+}

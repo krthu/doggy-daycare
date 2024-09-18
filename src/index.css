@@ -20,8 +20,13 @@ a {
   font-family: "Lora", serif;
 }
 
-h1 {
+h1, h2, h3 {
   font-family: "Poppins", sans-serif;
+
+}
+
+h1 {
   font-size: 1rem;
   padding-block: 10px;
+  display: inline-block;
 }
