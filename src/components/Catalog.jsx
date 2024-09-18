@@ -1,28 +1,33 @@
 import { useState, useEffect } from "react";
 import ListItem from "./ListItem";
+import List from "./List";
 
 
 const Catalog = (props) => {
+
+    const sortAlphabeticly = (a, b) => {
+        if (a.name < b.name ){
+            return -1;
+        }
+        if (a.name > b.name) {
+            return 1;
+        }
+        return 0;
+    }
+
     let status = 'loading';
 
     if (!props.data) {
         return <p>Loading catalog...</p>; 
       }
-    let list = props.data.record
+    let list = props.data.record.sort((a , b) => {
+        sortAlphabeticly(a, b)
+    })
 
     return(
-        <ul>
-            {list.length > 0 ? (
-                list.map((dog, index) => (
-                    <ListItem dog={dog} index={index} key={index}/>
-                    // <li key={index}>{dog.name}</li>
-                ))
-            ):(
-                <p>{"No dogs found!"}</p>
-            )
-        }
 
-        </ul>
+        <List list={list} />
+
     )
 
 }
