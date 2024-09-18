@@ -5,7 +5,7 @@ import List from "./List";
 
 const Catalog = (props) => {
 
-    const sortAlphabeticly = (a, b) => {
+    const sortAlphabetically = (a, b) => {
         if (a.name < b.name ){
             return -1;
         }
@@ -20,9 +20,12 @@ const Catalog = (props) => {
     if (!props.data) {
         return <p>Loading catalog...</p>; 
       }
-    let list = props.data.record.sort((a , b) => {
-        sortAlphabeticly(a, b)
-    })
+    // let list = props.data.record.sort((a , b) => {
+    //     sortAlphabeticlly(a, b)
+    // })
+
+    const list = props.data.record.sort(sortAlphabetically);
+    console.log(list[0].name)
 
     return(
 
