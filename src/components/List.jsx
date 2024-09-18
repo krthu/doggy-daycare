@@ -1,11 +1,27 @@
+import { useEffect, useState } from "react";
 import ListItem from "./ListItem";
 
 const List = (props) => {
 
-    let list = props.list
+    const list = props.list
 
+
+    // useEffect( () => {
+    //     filteredList = list.
+        
+    // },[searchInput])
+    
 
     return (
+        <>
+        {/* <section className="search-section">
+            <input placeholder="Search" 
+            value={searchInput} 
+            onChange={handleInputChange}/>
+            <span className="material-symbols-outlined">
+                filter_list
+            </span>
+        </section> */}
         <ul>
             {list.length > 0 ? (
                 list.map((dog, index) => (
@@ -18,6 +34,7 @@ const List = (props) => {
             }
 
         </ul>
+        </>
     )
 
 
