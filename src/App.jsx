@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 
 import './App.css'
 import Welcome from './components/Welcome';
@@ -66,7 +66,9 @@ function App() {
   return (
     <div className='container'>
       <header>
-        <h1>Happy Tails Retreat</h1>
+        <Link to={'/'}>
+          <h1>Happy Tails Retreat</h1>
+        </Link>
       </header>
       <main>
         <Routes>
