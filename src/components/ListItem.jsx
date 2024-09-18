@@ -4,7 +4,7 @@ import './ListItem.css'
 const ListItem = (props) => {
     const dog = props.dog;
     return (
-        <Link to={`/catalog/${props.index}`}>
+        <Link to={`/catalog/${dog.chipNumber}`}>
 
             <li className="list-item">
                 <img className="list-image" src={dog.img} alt="" />

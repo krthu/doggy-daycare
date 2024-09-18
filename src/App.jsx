@@ -79,7 +79,7 @@ function App() {
             element = { <Catalog data={data}/>}
           />
 
-          <Route path='/catalog/:id' 
+          <Route path='/catalog/:chipNumber' 
             element= {<Details data={data}/>}
           />
 
