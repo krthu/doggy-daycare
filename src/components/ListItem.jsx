@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import './ListItem.css'
+import './ListItem.css';
+import placeholderImage from '../assets/placeholder.png';
 
 const ListItem = (props) => {
     const dog = props.dog;
@@ -7,7 +8,10 @@ const ListItem = (props) => {
         <Link to={`/catalog/${dog.chipNumber}`}>
 
             <li className="list-item">
-                <img className="list-image" src={dog.img} alt="" />
+                <img className="list-image" 
+                    src={dog.img} 
+                    alt="" onError={(e) => e.target.src = placeholderImage}
+                />
                 <div className="list-info-container">
                     <p className="list-name">{dog.name}</p>
                     <p>{dog.breed}</p>

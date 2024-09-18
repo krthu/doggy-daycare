@@ -1,6 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 import './Details.css'
 import DetailsInfoItem from "./DetailsInfoItem";
+import placeholderImage from '../assets/placeholder.png';
+
 
 
 const Details = (props) => {
@@ -25,6 +27,7 @@ const Details = (props) => {
     }
 
 
+
     return (
         <div className="details-container">
             <Link to={'/catalog'} className="back-link">
@@ -32,7 +35,11 @@ const Details = (props) => {
                     arrow_back_ios
                 </span>
             </Link>
-            <img src={dog.img} alt={`${dog.name} is a ${dog.breed}`} className={`large-profile-image ${dog.present ? 'details-present' : ''}`   }/>
+            <img src={dog.img} 
+                alt={`${dog.name} is a ${dog.breed}`} 
+                className={`large-profile-image ${dog.present ? 'details-present' : ''}`} 
+                onError={(e) => e.target.src = placeholderImage}
+            />
             <section className="information-section">
                 <h3 className="name">{dog.name} <span class="material-symbols-outlined gender-span">
                 {dog.sex} </span></h3>
