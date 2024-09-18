@@ -15,17 +15,14 @@ const Catalog = (props) => {
         return 0;
     }
 
-    let status = 'loading';
+ 
 
     if (!props.data) {
         return <p>Loading catalog...</p>; 
       }
-    // let list = props.data.record.sort((a , b) => {
-    //     sortAlphabeticlly(a, b)
-    // })
 
     const list = props.data.record.sort(sortAlphabetically);
-    console.log(list[0].name)
+
 
     return(
 

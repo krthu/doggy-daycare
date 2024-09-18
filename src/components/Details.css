@@ -1,0 +1,17 @@
+.details-container {
+    display: flex;
+    flex-direction: column;
+ 
+}
+
+.large-profile-image {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid lightgray;
+
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
