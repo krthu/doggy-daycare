@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import './App.css'
+import Welcome from './components/Welcome';
 
 function App() {
 
@@ -28,16 +29,25 @@ function App() {
     //       })
         
     //   })
-    fetchData();
+    
+   // fetchData();
 
 
   },[])
 
   return (
-    <>
-      
+    <div className='container'>
+      <header>
+        <h1>Happy Tails Retreat</h1>
+      </header>
+      <main>
+        <Welcome />
+      </main>
+      <footer>
 
-    </>
+      </footer>
+
+    </div>
   )
 }
 
