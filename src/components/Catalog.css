@@ -4,6 +4,11 @@
     border: 1px solid black;
     border-radius: 10px;
     padding: 5px;
+    background-color: white;
+
+
+    
+    
 }
 
 .search-section input{
@@ -12,6 +17,10 @@
     font-size: 1rem;
     border: none;
     outline: none;
+}
+
+.catalog-list{
+    overflow-y: scroll;
 }
 
 .filter-overlay {

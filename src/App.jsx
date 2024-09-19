@@ -5,6 +5,7 @@ import './App.css'
 import Welcome from './components/Welcome';
 import Catalog from './components/Catalog';
 import Details from './components/Details';
+import Header from './components/Header';
 
 function App() {
   const apiURL = 'https://api.jsonbin.io/v3/b/66ea8f34acd3cb34a886a7c8';
@@ -64,43 +65,6 @@ function App() {
     return <p>Loading...</p>;
   }
 
-
- 
-
-
-
-
-
-
-  // const [data, setData] = useState(null);
-  // console.log(data);
-
-  // const apiURL = 'https://api.jsonbin.io/v3/b/66ea8f34acd3cb34a886a7c8';
-
-  // const fetchData = async () => {
-  //   try {
-  //     const res = await fetch(apiURL);
-  //     const json = await res.json();
-  //     setData(json.record);
-  //   } catch (error) {
-  //     console.log('error fetching data')
-  //   }
-  // }
-
-  // useEffect( () => {
-  //   // fetch(apiURL)
-  //   //   .then((newData) => {
-  //   //     newData.json()
-  //   //       .then((json) => {
-  //   //         setData(json.record);
-  //   //       })
-        
-  //   //   })
-    
-  //  // fetchData();
-
-
-  // },[])
   if (!data) {
     return <p>No data available.</p>;
   }
@@ -131,18 +95,10 @@ function App() {
       (dog.sex.toLowerCase() === (selectedSex.toLowerCase()) || selectedSex === '') &&
       ((minAge === '' || dog.age >= minAge) && (maxAge === '' || dog.age <= maxAge))
     );
-  
-  
-  
-
 
   return (
     <div className='container'>
-      <header>
-        <Link to={'/'}>
-          <h1>Happy Tails Retreat</h1>
-        </Link>
-      </header>
+      <Header />
       <main>
         <Routes>
           <Route path='/'
@@ -152,19 +108,18 @@ function App() {
           <Route path='/catalog'
             element = { <Catalog 
                         //data={data}
-                        list={filteredList}
-                        searchInput={searchInput}
-                        handleInputChange={handleInputChange}
-                        selectedBreed={selectedBreed}
-                        handleChangeBreed={handleChangeBreed}
-                        selectedSex={selectedSex}
-                        handleChangeSex={handleChangeSex}
-                        minAge={minAge}
-                        handleMinAgeChange={handleMinAgeChange}
-                        maxAge={maxAge}
-                        handleMaxAgeChange={handleMaxAgeChange}
-                        uniqueBreeds={uniqueBreeds}
-
+                          list={filteredList}
+                          searchInput={searchInput}
+                          handleInputChange={handleInputChange}
+                          selectedBreed={selectedBreed}
+                          handleChangeBreed={handleChangeBreed}
+                          selectedSex={selectedSex}
+                          handleChangeSex={handleChangeSex}
+                          minAge={minAge}
+                          handleMinAgeChange={handleMinAgeChange}
+                          maxAge={maxAge}
+                          handleMaxAgeChange={handleMaxAgeChange}
+                          uniqueBreeds={uniqueBreeds}
                         />}
           />
 
@@ -178,7 +133,7 @@ function App() {
        
       </main>
       <footer>
-
+        <p>Footer</p>
       </footer>
 
     </div>
