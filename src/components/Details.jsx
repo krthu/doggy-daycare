@@ -31,7 +31,7 @@ const Details = (props) => {
     return (
         <div className="details-container">
             <Link to={'/catalog'} className="back-link">
-                <span class="material-symbols-outlined back-arrow">
+                <span className="material-symbols-outlined back-arrow">
                     arrow_back_ios
                 </span>
             </Link>
@@ -41,15 +41,15 @@ const Details = (props) => {
                 onError={(e) => e.target.src = placeholderImage}
             />
             <section className="information-section">
-                <h3 className="name">{dog.name} <span class="material-symbols-outlined gender-span">
+                <h3 className="name">{dog.name} <span className="material-symbols-outlined gender-span">
                 {dog.sex} </span></h3>
-                {/* <section className="details-info-section"> */}
+                 <section className="details-info-section"> 
                     <DetailsInfoItem label={'Breed'} value={dog.breed}/>
                     <DetailsInfoItem label={'Age'} value={dog.age} />
                     <DetailsInfoItem label={'Chip number'} value={dog.chipNumber} />
                     <DetailsInfoItem label={'Owner'} value={`${dog.owner.name} ${dog.owner.lastName}`} />
                     <DetailsInfoItem label={'Phone'} value={dog.owner.phoneNumber} />
-                {/* </section> */}
+                 </section> 
             </section>
         </div>
 
