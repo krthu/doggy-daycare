@@ -13,3 +13,58 @@
     border: none;
     outline: none;
 }
+
+.filter-overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    
+    left: 0;
+}
+
+.filter-section{
+    padding: 20px;
+    background: orange;
+    margin-left: 20px;
+    border-radius: 10px 0 0 10px;
+}
+
+select {
+    text-transform: capitalize;
+    font-size: 1rem;
+    padding: 5px;
+  
+    border-radius: 5px;
+}
+
+.filter-option{
+    display: flex;
+    justify-content: space-between;
+    margin-block: 10px;
+    align-items: center;
+    
+ 
+
+}
+
+.close-filter {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    
+}
+
+.age-input-section {
+    display: flex;
+    gap: 10px;
+}
+
+.age-input{
+    max-width: 40px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(136, 136, 136);
+}
+
