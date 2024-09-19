@@ -1,16 +1,18 @@
 .list-item {
     display: flex;
-    border: 1px solid black;
-    padding:  5px;
-    color: rgb(98, 98, 98);
+    /* border: 1px solid black; */
+    padding:  10px 15px;
+    color: rgb(238, 238, 238);
     align-items: center;
     border-radius: 10px;
-    margin-block: 10px;
+    margin-block: 5px;
+    background-image: url('/wood.jpg');
     
 }
 
 .list-item p {
     text-transform: capitalize;
+    
 }
 
 .list-image {
@@ -27,10 +29,11 @@
 }
 
 .list-name {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: black;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
     font-family: "Poppins", sans-serif;
+    letter-spacing: 0.08rem;
 }
 
 .circle {
@@ -42,6 +45,6 @@
 }
 
 .present {
-    background-color: green;
+    background-color: rgb(32, 239, 32);
 }
 

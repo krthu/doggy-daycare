@@ -22,7 +22,7 @@ const List = (props) => {
                 filter_list
             </span>
         </section> */}
-        <ul>
+        <ul className="catalog-list">
             {list.length > 0 ? (
                 list.map((dog, index) => (
                     <ListItem dog={dog} index={index} key={index} />
