@@ -10,6 +10,8 @@ const Catalog = (props) => {
     const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false)
     const [selectedBreed, setSelectedBreed] = useState('')
     const [selectedSex, setSelectedSex] = useState('')
+    const [minAge, setMinAge] = useState('')
+    const [maxAge, setMaxAge] = useState('')
 
     const sortAlphabetically = (a, b) => {
         if (a.name < b.name) {
@@ -33,19 +35,28 @@ const Catalog = (props) => {
     const filteredList = list.filter(dog =>
         dog.name.toLowerCase().includes(searchInput.toLowerCase()) &&
         (dog.breed.toLowerCase() === (selectedBreed.toLowerCase()) || selectedBreed === '') &&
-        (dog.sex.toLowerCase() === (selectedSex.toLowerCase()) || selectedSex === '')
+        (dog.sex.toLowerCase() === (selectedSex.toLowerCase()) || selectedSex === '') &&
+        ((minAge === '' || dog.age >= minAge) && (maxAge === '' || dog.age <= maxAge))
       );
     const handleInputChange = (e) => {
         setSearchInput(e.target.value);
     }
 
     const handleChangeBreed = (e) => {
-        setSelectedBreed(e.target.value)
+        setSelectedBreed(e.target.value);
         // setIsFilterMenuOpen(false)
     }
 
     const handleChangeSex = (e) => {
-        setSelectedSex(e.target.value)
+        setSelectedSex(e.target.value);
+    }
+
+    const handleMinAgeChange = (e) => {
+        setMinAge(e.target.value);
+    }
+
+    const handleMaxAgeChange = (e) => {
+        setMaxAge(e.target.value);
     }
 
 
@@ -90,6 +101,16 @@ const Catalog = (props) => {
                                 optionName={'Sex'}
                                 />
                        </section>
+
+                       <section className="filter-option">
+                            <label>Age</label>
+                            <section className="age-input-section">
+                                <input type="Number" value={minAge} onChange={handleMinAgeChange} placeholder="from" className="age-input"/>
+                                <p> - </p>
+                                <input type="Number" vale={maxAge} onChange={handleMaxAgeChange} placeholder="to" className="age-input"/>
+                            </section>
+                       </section>
+                       
 
                     </section>
                 </div>

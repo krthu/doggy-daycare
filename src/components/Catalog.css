@@ -33,12 +33,18 @@
 select {
     text-transform: capitalize;
     font-size: 1rem;
+    padding: 5px;
+  
+    border-radius: 5px;
 }
 
 .filter-option{
     display: flex;
     justify-content: space-between;
     margin-block: 10px;
+    align-items: center;
+    
+ 
 
 }
 
@@ -48,5 +54,17 @@ select {
     right: 0;
     padding: 10px;
     
+}
+
+.age-input-section {
+    display: flex;
+    gap: 10px;
+}
+
+.age-input{
+    max-width: 40px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(136, 136, 136);
 }
 
