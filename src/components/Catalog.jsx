@@ -6,71 +6,22 @@ import DropDownInput from "./DropdownInput";
 
 
 const Catalog = (props) => {
-    const [searchInput, setSearchInput] = useState('');
-    const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false)
-    const [selectedBreed, setSelectedBreed] = useState('')
-    const [selectedSex, setSelectedSex] = useState('')
-    const [minAge, setMinAge] = useState('')
-    const [maxAge, setMaxAge] = useState('')
 
-    const sortAlphabetically = (a, b) => {
-        if (a.name < b.name) {
-            return -1;
-        }
-        if (a.name > b.name) {
-            return 1;
-        }
-        return 0;
-    }
+    const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
 
 
 
 
-    if (!props.data) {
-        return <p>Loading catalog...</p>;
-    }
-
-    const list = props.data.record.sort(sortAlphabetically);
-
-    const filteredList = list.filter(dog =>
-        dog.name.toLowerCase().includes(searchInput.toLowerCase()) &&
-        (dog.breed.toLowerCase() === (selectedBreed.toLowerCase()) || selectedBreed === '') &&
-        (dog.sex.toLowerCase() === (selectedSex.toLowerCase()) || selectedSex === '') &&
-        ((minAge === '' || dog.age >= minAge) && (maxAge === '' || dog.age <= maxAge))
-      );
-    const handleInputChange = (e) => {
-        setSearchInput(e.target.value);
-    }
-
-    const handleChangeBreed = (e) => {
-        setSelectedBreed(e.target.value);
-        // setIsFilterMenuOpen(false)
-    }
-
-    const handleChangeSex = (e) => {
-        setSelectedSex(e.target.value);
-    }
-
-    const handleMinAgeChange = (e) => {
-        setMinAge(e.target.value);
-    }
-
-    const handleMaxAgeChange = (e) => {
-        setMaxAge(e.target.value);
-    }
 
 
-
-    const uniqueBreeds = new Set(list.map(dog => dog.breed));
-    console.log(selectedBreed);
 
 
     return (
         <>
             <section className="search-section">
                 <input placeholder="Search"
-                    value={searchInput}
-                    onChange={handleInputChange} />
+                    value={props.searchInput}
+                    onChange={props.handleInputChange} />
                 <span className="material-symbols-outlined" onClick={() => setIsFilterMenuOpen(!isFilterMenuOpen)}>
                     filter_list
                 </span>
@@ -86,17 +37,17 @@ const Catalog = (props) => {
                         <section className="filter-option">
                             <label>Breed</label>
                            <DropDownInput 
-                                selectedOption={selectedBreed} 
-                                handleOptionChange={handleChangeBreed} 
-                                options={Array.from(uniqueBreeds)}
+                                selectedOption={props.selectedBreed} 
+                                handleOptionChange={props.handleChangeBreed} 
+                                options={Array.from(props.uniqueBreeds)}
                                 optionName={'Breed'}
                                 />
                         </section>
                         <section className="filter-option">
                             <label>Sex</label>
                             <DropDownInput
-                                selectedOption={selectedSex} 
-                                handleOptionChange={handleChangeSex}
+                                selectedOption={props.selectedSex} 
+                                handleOptionChange={props.handleChangeSex}
                                 options={['male', 'female']}
                                 optionName={'Sex'}
                                 />
@@ -105,9 +56,17 @@ const Catalog = (props) => {
                        <section className="filter-option">
                             <label>Age</label>
                             <section className="age-input-section">
-                                <input type="Number" value={minAge} onChange={handleMinAgeChange} placeholder="from" className="age-input"/>
+                                <input type="Number" 
+                                    value={props.minAge} 
+                                    onChange={props.handleMinAgeChange} 
+                                    placeholder="from" 
+                                    className="age-input"/>
                                 <p> - </p>
-                                <input type="Number" vale={maxAge} onChange={handleMaxAgeChange} placeholder="to" className="age-input"/>
+                                <input type="Number" 
+                                    vale={props.maxAge} 
+                                    onChange={props.handleMaxAgeChange} 
+                                    placeholder="to" 
+                                    className="age-input"/>
                             </section>
                        </section>
                        
@@ -116,7 +75,7 @@ const Catalog = (props) => {
                 </div>
             )}
 
-            <List list={filteredList} />
+            <List list={props.list} />
 
         </>
 
