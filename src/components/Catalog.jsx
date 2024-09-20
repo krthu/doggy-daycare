@@ -28,7 +28,7 @@ const Catalog = (props) => {
             </section>
 
             {isFilterMenuOpen && (
-                <div className="filter-overlay" onClick={() => setIsFilterMenuOpen(false)}>
+                <div className="filter-overlay">
                     <section className="filter-section">
                         <span className="material-symbols-outlined close-filter" onClick={() => setIsFilterMenuOpen(false)}>    
                         close
