@@ -28,12 +28,14 @@ const Catalog = (props) => {
             </section>
 
             {isFilterMenuOpen && (
-                <div className="filter-overlay">
+                <div className="filter-overlay" onClick={() => setIsFilterMenuOpen(false)}>
                     <section className="filter-section">
-                        <h2>Filter</h2>
-                        <span className="material-symbols-outlined close-filter" onClick={() => setIsFilterMenuOpen(false)}>
+                        <span className="material-symbols-outlined close-filter" onClick={() => setIsFilterMenuOpen(false)}>    
                         close
                         </span>
+                        <h2>Filter</h2>
+                        
+                    
                         <section className="filter-option">
                             <label>Breed</label>
                            <DropDownInput 
