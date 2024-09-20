@@ -24,12 +24,16 @@
 }
 
 .filter-overlay {
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     background-color: rgba(255, 255, 255, 0.4);
     position: absolute;
     top: 0;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+     
     
 
 }
@@ -37,9 +41,11 @@
 .filter-section{
     padding: 10px 20px 40px 20px;
     background: rgb(255, 255, 255);
-    max-width: 300px;
+    width: 350px;
+    max-width: 80%;
     border-radius: 10px 0 0 10px;
-    margin: 100px 0px 0px 20px;
+    margin-top: 100px;
+    
     display: flex;
     flex-direction: column;
     border: 1px solid black;
@@ -54,6 +60,7 @@ select {
     
     border-radius: 5px;
     margin-bottom: 5px;
+    
 }
 
 .filter-option{
@@ -62,10 +69,11 @@ select {
     margin-block: 10px;
     align-items: center;
     border-bottom: 1px solid black;
-    
+  
  
 
 }
+
 
 .close-filter {
     
