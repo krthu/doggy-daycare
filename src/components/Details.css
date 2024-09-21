@@ -11,6 +11,10 @@
 
 }
 
+.details-image-section{
+    display: flex;
+}
+
 .large-profile-image {
     aspect-ratio: 1;
     border-radius: 50%;
@@ -60,6 +64,7 @@
 
 .back-link{
     align-self: flex-start;
+    
 }
 
 
