@@ -65,7 +65,7 @@ const Catalog = (props) => {
                                     className="age-input"/>
                                 <p> - </p>
                                 <input type="Number" 
-                                    vale={props.maxAge} 
+                                    value={props.maxAge} 
                                     onChange={props.handleMaxAgeChange} 
                                     placeholder="to" 
                                     className="age-input"/>
