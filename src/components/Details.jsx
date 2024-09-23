@@ -51,7 +51,9 @@ const Details = (props) => {
                     <DetailsInfoItem label={'Chip number'} value={dog.chipNumber} />
                     <DetailsInfoItem label={'Owner'} value={`${dog.owner.name} ${dog.owner.lastName}`} />
                     <DetailsInfoItem label={'Phone'} value={dog.owner.phoneNumber} />
+
                  </section> 
+                 <button className={`check-in-button ${dog.present ? 'checked-in' : ''}`}>Check {dog.present ? 'out' : 'in'}</button>
             </section>
         </div>
 
