@@ -9,6 +9,10 @@
     background-image: url('/wood.jpg');
     box-shadow: 3px 2px 5px rgb(0, 0, 0);
     margin-inline: 10px;
+    max-width: 400px;
+    
+    
+
     
 }
 

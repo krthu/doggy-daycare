@@ -15,9 +15,6 @@ const Details = (props) => {
 
 
     const params = useParams();
-    // const id = params.id;
-    // const dogID = parseInt(id);
-    // const dog = dogID >= 0 && dogID < list.length ? list[dogID] : null;
 
     const chipNumber = params.chipNumber;
     const dog = list.find(dog => dog.chipNumber === chipNumber)

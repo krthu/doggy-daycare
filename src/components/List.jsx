@@ -29,7 +29,7 @@ const List = (props) => {
 
                 ))
             ) : (
-                <p>{"No dogs found!"}</p>
+                <p className="list-empty">{"No dogs found!"}</p>
             )
             }
 

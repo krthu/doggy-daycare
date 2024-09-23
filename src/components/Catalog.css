@@ -6,6 +6,8 @@
     /* padding: 5px; */
     background-color: white;
     overflow: hidden;
+    max-width: 400px;
+    margin: 0 auto;
     
 }
 
@@ -15,6 +17,7 @@
     font-size: 1rem;
     border: none;
     outline: none;
+   
 
 }
 
@@ -34,6 +37,12 @@
 
 .catalog-list{
     overflow-y: scroll;
+    /* max-width: 300px; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+
+    
 }
 
 .filter-overlay {
@@ -108,5 +117,27 @@ select {
     text-align: center;
 }
 
+.list-empty{
+    background-color: white;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    font-weight: 600;
+    
+}
+
+@media (min-width: 500px) {
+    .catalog-list{
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+    }
+    
+}
 
 
