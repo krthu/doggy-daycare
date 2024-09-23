@@ -1,7 +1,7 @@
 .details-container {
     display: flex;
     flex-direction: column;
-    background-image: url('./wood.jpg');
+    background-image: url('/wood.jpg');
     padding: 10px;
     color: white;
     border-radius: 10px;
