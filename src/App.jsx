@@ -62,6 +62,15 @@ function App() {
       setMaxAge(e.target.value);
   }
 
+  const clearFilterSelections = () => {
+    setSearchInput('');
+    setSelectedBreed('');
+    setSelectedSex('');
+    setMinAge('');
+    setMaxAge('');
+    setSelectedPresentOption(null);
+  }
+
   const handlePresentOptionChange = (e) => {
 
     switch (e.target.value){
@@ -139,6 +148,7 @@ function App() {
                           uniqueBreeds={uniqueBreeds}
                           selectedPresentOption={selectedPresentOption}
                           handlePresentOptionChange={handlePresentOptionChange}
+                          clearFilter={clearFilterSelections}
                         />}
           />
 
