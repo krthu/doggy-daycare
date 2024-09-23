@@ -22,13 +22,22 @@ const Catalog = (props) => {
         }
     }
 
+    const isFiltersSet = () => {
+        if (props.searchInput != '' || props.selectedBreed != ''
+            || props.selectedSex != '' || props.selectedPresentOption != null
+            || props.minAge != '' || props.maxAge != ''){
+                return true;
+            }
+        return false;
+    }
+
     return (
         <>
             <section className="search-section">
                 <input placeholder="Search"
                     value={props.searchInput}
                     onChange={props.handleInputChange} />
-                <span className="material-symbols-outlined" onClick={() => setIsFilterMenuOpen(!isFilterMenuOpen)}>
+                <span className={`material-symbols-outlined search-symbol ${isFiltersSet() ? 'filter-set' : ''}`} onClick={() => setIsFilterMenuOpen(!isFilterMenuOpen)}>
                     filter_list
                 </span>
             </section>
@@ -87,7 +96,7 @@ const Catalog = (props) => {
                         />
                        </section>
                        
-
+                        <button onClick={props.clearFilter}>Clear Filters</button>
                     </section>
                 </div>
             )}

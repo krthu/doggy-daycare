@@ -2,22 +2,15 @@
     display: flex;
     flex-direction: column;
     background-image: url('./wood.jpg');
-    
     padding: 10px;
     color: white;
     border-radius: 10px;
-    
-    
-
 }
 
 .details-image-section{
     display: flex;
     justify-content: center;
-
     position: relative;
-
-
     
 }
 
@@ -52,12 +45,8 @@
 }
 
 .gender-span {
-
     font-size: 2rem;
-
     margin-left: 10px;
-
-    
 }
 
 .back-arrow{
@@ -65,9 +54,7 @@
     font-size: 2rem;
     padding: 5px;
     position: absolute;
-    
     left: 10px;
-
 }
 
 .back-link{
