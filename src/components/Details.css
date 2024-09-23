@@ -11,6 +11,16 @@
 
 }
 
+.details-image-section{
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+
+
+    
+}
+
 .large-profile-image {
     aspect-ratio: 1;
     border-radius: 50%;
@@ -42,8 +52,7 @@
 }
 
 .gender-span {
-    /* border: 1px solid black;
-    border-radius: 50%; */
+
     font-size: 2rem;
 
     margin-left: 10px;
@@ -55,11 +64,15 @@
     align-self: flex-start;
     font-size: 2rem;
     padding: 5px;
+    position: absolute;
+    
+    left: 10px;
 
 }
 
 .back-link{
     align-self: flex-start;
+    
 }
 
 

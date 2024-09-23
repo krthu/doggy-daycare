@@ -15,6 +15,7 @@ function App() {
   const [selectedSex, setSelectedSex] = useState('');
   const [minAge, setMinAge] = useState('');
   const [maxAge, setMaxAge] = useState('');
+  const [selectedPresentOption, setSelectedPresentOption] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
@@ -61,6 +62,20 @@ function App() {
       setMaxAge(e.target.value);
   }
 
+  const handlePresentOptionChange = (e) => {
+
+    switch (e.target.value){
+      case 'present':
+        setSelectedPresentOption(true);
+        break;
+      case 'absent':
+        setSelectedPresentOption(false);
+        break;
+      default:
+        setSelectedPresentOption(null);
+    }
+  }
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -84,7 +99,7 @@ function App() {
 
 
   const uniqueBreeds = new Set(list.map(dog => dog.breed));
-  console.log(selectedBreed);
+
 
 
 
@@ -93,7 +108,9 @@ function App() {
       dog.name.toLowerCase().includes(searchInput.toLowerCase()) &&
       (dog.breed.toLowerCase() === (selectedBreed.toLowerCase()) || selectedBreed === '') &&
       (dog.sex.toLowerCase() === (selectedSex.toLowerCase()) || selectedSex === '') &&
-      ((minAge === '' || dog.age >= minAge) && (maxAge === '' || dog.age <= maxAge))
+      ((minAge === '' || dog.age >= minAge) && (maxAge === '' || dog.age <= maxAge)) &&
+      (dog.present === selectedPresentOption || selectedPresentOption === null)
+    
     );
 
   return (
@@ -120,6 +137,8 @@ function App() {
                           maxAge={maxAge}
                           handleMaxAgeChange={handleMaxAgeChange}
                           uniqueBreeds={uniqueBreeds}
+                          selectedPresentOption={selectedPresentOption}
+                          handlePresentOptionChange={handlePresentOptionChange}
                         />}
           />
 
