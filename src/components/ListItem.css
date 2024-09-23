@@ -1,14 +1,20 @@
 .list-item {
     display: flex;
+    
     /* border: 1px solid black; */
     padding:  10px 15px;
     color: rgb(238, 238, 238);
     align-items: center;
     border-radius: 10px;
-    margin-block: 5px;
+
     background-image: url('/wood.jpg');
     box-shadow: 3px 2px 5px rgb(0, 0, 0);
-    margin-inline: 10px;
+    margin-inline: auto;
+    max-width: 400px;
+    
+    
+    
+
     
 }
 
