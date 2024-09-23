@@ -60,6 +60,7 @@ select {
     
     border-radius: 5px;
     margin-bottom: 5px;
+    color: black;
     
 }
 
@@ -76,8 +77,6 @@ select {
 
 
 .close-filter {
-    
- 
     font-size: 1.7rem;
     align-self: flex-end;
     
@@ -89,10 +88,12 @@ select {
 }
 
 .age-input{
-    max-width: 40px;
+    max-width: 50px;
     padding: 5px;
     border-radius: 5px;
     margin-bottom: 5px;
     border: 1px solid rgb(99, 99, 99);
+    font-size: 1rem;
+    text-align: center;
 }
 

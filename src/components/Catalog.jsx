@@ -9,12 +9,18 @@ const Catalog = (props) => {
 
     const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
 
+    const getPresentOptionText = (option) => {
 
+        switch (option){
+            case true:
+                return 'present';
+            case false:
+                return 'absent';
+            default: 
+                return '';
 
-
-
-
-
+        }
+    }
 
     return (
         <>
@@ -70,6 +76,15 @@ const Catalog = (props) => {
                                     placeholder="to" 
                                     className="age-input"/>
                             </section>
+                       </section>
+
+                       <section className="filter-option">
+                        <label>Present:</label>
+                        <DropDownInput 
+                            selectedOption={getPresentOptionText(props.selectedPresentOption)}
+                            handleOptionChange={props.handlePresentOptionChange}
+                            options={['present', 'absent']}
+                        />
                        </section>
                        
 
