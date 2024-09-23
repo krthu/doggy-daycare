@@ -37,7 +37,7 @@
 
 .catalog-list{
     overflow-y: scroll;
-    /* max-width: 300px; */
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 10px;
@@ -130,15 +130,6 @@ select {
     font-size: 1.2rem;
     border: 1px solid black;
     font-weight: 600;
-    
-}
-
-@media (min-width: 500px) {
-    .catalog-list{
-        flex-direction: row;
-        flex-wrap: wrap;
-        
-    }
     
 }
 
