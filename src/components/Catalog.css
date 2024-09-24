@@ -3,11 +3,12 @@
     justify-content: space-between;
     border: 1px solid black;
     border-radius: 10px;
-    /* padding: 5px; */
+  
     background-color: white;
     overflow: hidden;
     max-width: 400px;
     margin: 0 auto;
+
     
 }
 
@@ -21,14 +22,13 @@
 
 }
 
-.search-symbol{
-    
+.search-symbol{ 
     display: flex;
     justify-items: center;
     align-items: center;
-    /* border-radius: 50px; */
     padding: 2px 5px;
     border-left: 1px solid lightgray;
+    
 }
 
 .search-symbol.filter-set{
@@ -36,15 +36,11 @@
 }
 
 .catalog-list{
-    overflow-y: scroll;
-
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 10px;
     padding: 10px;
 
-
-    
 }
 
 .filter-overlay {
@@ -130,6 +126,19 @@ select {
     font-size: 1.2rem;
     border: 1px solid black;
     font-weight: 600;
+    
+}
+
+@media (min-width: 1000px) {
+    .search-section input{
+        font-size: 1.3rem;
+
+    }
+
+    .search-symbol{
+        font-size: 1.6rem;
+    }
+
     
 }
 

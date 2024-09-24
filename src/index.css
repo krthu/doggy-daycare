@@ -18,13 +18,15 @@ a {
 .container {
   width: 100dvw;
   height: 100dvh;
-
+  max-width: 1500px;
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.4);
+  margin: 0 auto;
+
 
   /* padding: 10px; */
   font-family: "Lora", serif;
+
 }
 
 h1, h2, h3 {
@@ -44,12 +46,22 @@ h1 {
 
 }
 
+p {
+  font-size: 1rem;
+}
+
 
 
 main{
   padding: 10px;
   overflow-y: scroll;
   flex-grow: 1;
+  /* max-width: 2000px;
+  width: 100%;
+  align-self: center; */
+
+  background-color: rgba(255, 255, 255, 0.4);
+
 
 }
 
@@ -65,4 +77,16 @@ button{
   border: 1px solid black;
   color: black;
   font-size: 1rem;
+}
+
+@media (min-width: 1400px) {
+  main, header{
+    padding-inline: 80px;
+  }
+
+  p{
+    font-size: 1.3rem;
+  }
+
+  
 }

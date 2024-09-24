@@ -1,32 +1,21 @@
 header {
     display: flex;
-    /* flex-direction: column; */
-    /* background-color: aliceblue; */
-    /* background-image: url('./stone.jpg'); */
+
     background-color: white;
     padding: 0px 10px;
     justify-content: space-between;
     align-items: center;
-    
-    
-
     border-bottom: 1px solid black;
+    /* max-width: 2000px;
+    align-self: center;
+    width: 100%; */
 }
-/* 
-.header-logo{
-    max-width: 100px;
-} */
+
 
 nav{
 
     align-self: flex-end;
 
-
-
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column; */
 }
 
 .menu-list{
@@ -46,12 +35,11 @@ nav{
     background-color: white;
     border-radius: 10px;
     display: flex;
-    /* flex-direction: column; */
+
     align-items: center;
     font-size: 0.7rem;
     gap: 5px;
-    /* background-image: url('/bone-small.png');
-    background-size:cover; */
+
 
 
     
@@ -61,25 +49,11 @@ nav{
     font-size: 1.5rem;
 }
 
-/* .menu-button{
-    align-self: flex-end;
+@media (min-width: 1000px){
+    .menu-item-icon{
+        font-size: 1.8rem;
+    }
+    .menu-item{
+        font-size: 0.9rem;
+    }
 }
-
-
-.nav-menu{
-    display: none;
-    list-style: none;
-    justify-content: space-around;
-    align-items: center;
-    background-color: aqua;
-    padding-block: 10px;
-    position: absolute;
-    right: 0;
-    flex-direction: column;
-    height: 100vh;
-    
-}
-
-.nav-menu.open{
-    display: block;
-} */
