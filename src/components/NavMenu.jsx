@@ -19,10 +19,14 @@ const NavMenu = () => {
                 {/* <li className="menu-item">Home</li> */}
                 <Link to={'./catalog/'}>
                     <li className="menu-item"><span className="material-symbols-outlined menu-item-icon">
-                        list
-                    </span>Catalog</li>
+                        list</span>
+                        Catalog
+                    </li>
                 </Link>
-                <li className="menu-item">New Dog</li>
+                <li className="menu-item">
+                    <span className="material-symbols-outlined menu-item-icon">
+                        add</span> New Dog
+                </li>
             </ul>
         </nav>
 
