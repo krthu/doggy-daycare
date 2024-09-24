@@ -1,0 +1,17 @@
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    font-size: 0.6rem;
+    padding: 5px;
+}
+
+@media (min-width: 1500px) {
+    footer p{
+        font-size: 1rem;    
+    }
+ 
+}

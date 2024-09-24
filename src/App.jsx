@@ -6,6 +6,7 @@ import Welcome from './components/Welcome';
 import Catalog from './components/Catalog';
 import Details from './components/Details';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   const apiURL = 'https://api.jsonbin.io/v3/b/66ea8f34acd3cb34a886a7c8';
@@ -161,9 +162,8 @@ function App() {
 
        
       </main>
-      <footer>
-        <p>Footer</p>
-      </footer>
+      <Footer />
+
 
     </div>
   )
