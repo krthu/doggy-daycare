@@ -12,10 +12,6 @@
     margin-inline: auto;
     max-width: 400px;
     
-    
-    
-
-    
 }
 
 .list-item p {
@@ -57,3 +53,14 @@
     background-color: rgb(32, 239, 32);
 }
 
+@media (min-width: 1500px) {
+    .list-image{
+        height: 80px;
+        width: 80px;
+    }
+
+    .list-name{
+        font-size: 1.6rem;
+    }
+    
+}
