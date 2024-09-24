@@ -112,3 +112,32 @@
 .checked-in{
     background-color: green;
 }
+
+@media (min-width: 1000px) {
+
+
+    .details-value{
+        font-size: 1.5rem;
+    }
+
+    .details-label{
+        font-size: 1.3rem;
+    }
+
+    .name, .gender-span, .back-arrow{
+        font-size: 3rem;
+    }
+
+    .check-in-button{
+        font-size: 1.5rem;
+    }
+
+    .large-profile-image{
+        max-width: 400px;
+    }
+
+    .information-section{
+        padding: 40px;
+    }
+
+}
