@@ -6,7 +6,8 @@
 html, body {
 
 
-  background-image: url('/grass.jpg');
+  /* background-image: url('/grass.jpg'); */
+  background-color: rgb(65 146 176);
   
 }
 

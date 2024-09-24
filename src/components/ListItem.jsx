@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import './ListItem.css';
-import placeholderImage from '../assets/placeholder.png';
+import placeholderImage from '../assets/placeholder2.png';
 
 const ListItem = (props) => {
     const dog = props.dog;
