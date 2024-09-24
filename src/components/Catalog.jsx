@@ -96,7 +96,7 @@ const Catalog = (props) => {
                         />
                        </section>
                        
-                        <button onClick={props.clearFilter}>Clear Filters</button>
+                        <button className="clear-filter-button" onClick={props.clearFilter}>Clear Filters</button>
                     </section>
                 </div>
             )}

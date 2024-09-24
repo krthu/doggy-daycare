@@ -63,7 +63,7 @@
     max-width: 80%;
     border-radius: 10px 0 0 10px;
     margin-top: 100px;
-    
+    font-size: 1rem;
     display: flex;
     flex-direction: column;
     border: 1px solid black;
@@ -73,7 +73,7 @@
 
 select {
     text-transform: capitalize;
-    font-size: 1rem;
+
     padding: 5px;
     
     border-radius: 5px;
@@ -88,9 +88,6 @@ select {
     margin-block: 10px;
     align-items: center;
     border-bottom: 1px solid black;
-  
- 
-
 }
 
 
@@ -111,7 +108,7 @@ select {
     border-radius: 5px;
     margin-bottom: 5px;
     border: 1px solid rgb(99, 99, 99);
-    font-size: 1rem;
+    /* font-size: 1rem; */
     text-align: center;
 }
 
@@ -126,7 +123,10 @@ select {
     font-size: 1.2rem;
     border: 1px solid black;
     font-weight: 600;
-    
+}
+
+.clear-filter-button {
+    margin-top: 10px;   
 }
 
 @media (min-width: 1000px) {
@@ -138,6 +138,24 @@ select {
     .search-symbol{
         font-size: 1.6rem;
     }
+
+    .filter-overlay{
+        align-items: center;
+    }
+
+    .filter-section{
+        font-size: 1.3rem;
+    }
+
+    select, .age-input, label, .clear-filter-button{
+        font-size: 1.5rem;
+    }
+
+    .age-input{
+        max-width: 70px;
+    }
+
+    
 
     
 }
