@@ -8,7 +8,7 @@ const Header = () => {
         <header>
             <Link to={'/'}>
                 <h1>Happy Tails <br />Retreat</h1>
-            {/* <img src={logoImage} className='header-logo'/> */}
+          
             </Link>
             <NavMenu />
       </header>
