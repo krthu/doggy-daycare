@@ -49,7 +49,7 @@ function App() {
 
   const handleChangeBreed = (e) => {
       setSelectedBreed(e.target.value);
-      // setIsFilterMenuOpen(false)
+
   }
 
   const handleChangeSex = (e) => {
@@ -57,11 +57,19 @@ function App() {
   }
 
   const handleMinAgeChange = (e) => {
+    const num = e.target.value;
+    
+    if (!isNaN(num) && num >= 0){
       setMinAge(e.target.value);
+    }
   }
 
   const handleMaxAgeChange = (e) => {
+    const num = e.target.value;
+    
+    if (!isNaN(num) && num >= 0){
       setMaxAge(e.target.value);
+    }
   }
 
   const clearFilterSelections = () => {

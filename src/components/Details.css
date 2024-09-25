@@ -1,9 +1,7 @@
 .details-container {
     display: flex;
     flex-direction: column;
-
-    /* background-image: url('/wood.jpg'); */
-     background-color: rgb(65 146 176);
+    background-color: rgb(65 146 176);
     padding: 10px;
     color: white;
     border-radius: 10px;
@@ -105,8 +103,6 @@
     border: 5px solid green;
 }
 .check-in-button{
-    /* text-transform: uppercase; */
-    /* letter-spacing: 0.05rem; */
     font-family: "Poppins", sans-serif;
     font-weight: 700;
 }
@@ -136,7 +132,7 @@
 
     .large-profile-image{
         max-width: 300px;
-        /* width: 400px; */
+
     }
 
     .information-section{
