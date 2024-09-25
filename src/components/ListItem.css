@@ -14,8 +14,13 @@
     box-shadow: 3px 2px 5px rgb(0, 0, 0);
     margin-inline: auto;
     max-width: 400px;
-    border: 1px solid black;
+    border: 1px solid rgb(199, 242, 255);
+    transition: background-color 0.3s;
     
+}
+
+.list-item:hover{
+    background-color: rgb(65 146 176);
 }
 
 .list-item p {
