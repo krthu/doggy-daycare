@@ -12,6 +12,7 @@ const FormInput = (props) => {
                 type={props.type ?? ''}
                 onChange={(e) => props.changeValue(e.target.value)}
             />
+             {/* <span className="form-error-message">{props.error}</span> */}
         </div>
     )
 }
