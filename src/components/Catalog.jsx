@@ -58,6 +58,7 @@ const Catalog = (props) => {
                                 handleOptionChange={props.handleChangeBreed} 
                                 options={Array.from(props.uniqueBreeds)}
                                 optionName={'Breed'}
+                                noSelectionText={'All Breeds'}
                                 />
                         </section>
                         <section className="filter-option">
@@ -67,6 +68,7 @@ const Catalog = (props) => {
                                 handleOptionChange={props.handleChangeSex}
                                 options={['male', 'female']}
                                 optionName={'Sex'}
+                                noSelectionText={'Both'}
                                 />
                        </section>
 
@@ -93,6 +95,7 @@ const Catalog = (props) => {
                             selectedOption={getPresentOptionText(props.selectedPresentOption)}
                             handleOptionChange={props.handlePresentOptionChange}
                             options={['present', 'absent']}
+                            noSelectionText={'All'}
                         />
                        </section>
                        
