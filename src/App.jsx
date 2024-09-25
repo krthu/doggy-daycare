@@ -19,6 +19,7 @@ function App() {
   const [selectedPresentOption, setSelectedPresentOption] = useState(null);
   const [loading, setLoading] = useState(true);
 
+
   const fetchData = async () => {
     try {
      
@@ -110,18 +111,42 @@ function App() {
 
   const uniqueBreeds = new Set(list.map(dog => dog.breed));
 
+  const setDefaultValues = (dog) => {
+    if (!dog.name){
+      dog.name = ('Not set');
+    }
+    if (!dog.breed){
+      dog.breed = ('Not set');
+    }
+    if (!dog.sex){
+      dog.sex = ('Not set');
+    }  
+    if (!dog.present){
+      dog.present = ('Not set');
+    }
+    if (!dog.age){
+      dog.age = ('Not set');
+    }
+    
+  }
 
 
 
 
-  const filteredList = list.filter(dog =>
+
+  const filteredList = list.filter(dog =>{
+      setDefaultValues(dog);
+      
+      return(
       dog.name.toLowerCase().includes(searchInput.toLowerCase()) &&
       (dog.breed.toLowerCase() === (selectedBreed.toLowerCase()) || selectedBreed === '') &&
       (dog.sex.toLowerCase() === (selectedSex.toLowerCase()) || selectedSex === '') &&
       ((minAge === '' || dog.age >= minAge) && (maxAge === '' || dog.age <= maxAge)) &&
       (dog.present === selectedPresentOption || selectedPresentOption === null)
+      )
+  });
+
     
-    );
 
   return (
     <div className='container'>

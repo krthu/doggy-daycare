@@ -9,7 +9,7 @@ const ListItem = (props) => {
 
             <li className="list-item">
                 <img className="list-image" 
-                    src={dog.img} 
+                    src={dog.img ?? './placeholder2.jpg'} 
                     alt="" onError={(e) => e.target.src = placeholderImage}
                 />
                 <div className="list-info-container">

@@ -33,7 +33,7 @@ const Details = (props) => {
                         arrow_back_ios
                     </span>
                 </Link>
-                <img src={dog.img} 
+                <img src={dog.img ?? './placeholder2.jpg'} 
                     alt={`${dog.name} is a ${dog.breed}`} 
                     className={`large-profile-image ${dog.present ? 'details-present' : ''}`} 
                     onError={(e) => e.target.src = placeholderImage}
@@ -41,12 +41,12 @@ const Details = (props) => {
             </div>
             <section className="information-section">
                 <h3 className="name">{dog.name} <span className="material-symbols-outlined gender-span">
-                {dog.sex} </span></h3>
+                {dog.sex !== 'Not set' ? dog.sex : 'question_mark'} </span></h3>
                  <section className="details-info-section"> 
                     <DetailsInfoItem label={'Breed'} value={dog.breed}/>
                     <DetailsInfoItem label={'Age'} value={dog.age} />
                     <DetailsInfoItem label={'Chip number'} value={dog.chipNumber} />
-                    <DetailsInfoItem label={'Owner'} value={`${dog.owner.name} ${dog.owner.lastName}`} />
+                    <DetailsInfoItem label={'Owner'} value={`${dog.owner.name ?? 'Not set'} ${dog.owner.lastName ?? 'Not set'}`} />
                     <DetailsInfoItem label={'Phone'} value={dog.owner.phoneNumber} />
 
                  </section> 
