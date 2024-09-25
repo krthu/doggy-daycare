@@ -18,14 +18,6 @@ const NewDog = () => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [previewImage, setPreviewImage] = useState(null);
 
-    // const [nameError, setNameError] = useState(false);
-    // const [breedError, setBreedError] = useState(null);
-    // const [sexError, setSexError] = useState(null);
-    // const [ageError, setAgeError] = useState(null);
-    // const [chipnumberError, setChipnumberError] = useState(null);
-    // const [ownerFirstNameError, setOwnerFirsError] = useState(null);
-    // const [ownerLastNameError, setOwnerLastNameError] = useState(null);
-    // const [phoneError, setPhoneError] = useState('');
     const [errors, setErrors] = useState({});
 
 
@@ -59,17 +51,6 @@ const NewDog = () => {
                 newErrors[field] = fieldsToValidate[field].message;            }
         })
 
-        // if(name === ''){
-        //     newErrors.name = 'Fill in name';
-        // } 
-        // if(breed === ''){
-        //     newErrors.breed = 'Fill in breed';
-        // }
-
-
-
-        
-
         setErrors(newErrors);
 
         if (Object.keys(newErrors).length <= 0){
@@ -95,8 +76,6 @@ const NewDog = () => {
             console.log('Save this dog please!')
             console.log(dog);
         }
-
-
     }
 
     return(
@@ -118,34 +97,6 @@ const NewDog = () => {
                     error={errors.breed ?? ''}
                 />
 
-                
-
-                {/* <div className="form-checkbox">
-                    <label className="form-row-label">Gender</label>
-                    <label>
-                        <input 
-                         
-                            type="radio"
-                            name="gender"
-                            value="male"
-                            checked={sex === 'male'}
-                            onChange={(e) => setSex(e.target.value)}
-                        />
-                        Male
-                    </label>
-
-                    <label>
-                        <input 
-                         
-                            type="radio"
-                            name="gender"
-                            value="female"
-                            checked={sex === 'female'}
-                            onChange={(e) => setSex(e.target.value)}
-                        />
-                        Female
-                    </label>
-                </div> */}
                 <div className="form-row">
                 <label className="form-row-label">Sex</label>
                     <DropdownInput 
@@ -159,7 +110,6 @@ const NewDog = () => {
                     />
                     <span className="form-error-message">{errors.sex}</span>
                 </div>
-
 
                 <FormInput 
                     value={age}
@@ -175,7 +125,6 @@ const NewDog = () => {
                     changeValue={setChipnumber}
                     label={'ChipNumber'}
                     error={errors.chipNumber ?? ''}
-                   
                 />
 
                 <FormInput 
@@ -184,7 +133,6 @@ const NewDog = () => {
                     changeValue={setOwnerFirstName}
                     label={'Owner Firstname'}
                     error={errors.ownerFirstName ?? ''}
-                   
                 />
 
                 <FormInput 
@@ -193,8 +141,6 @@ const NewDog = () => {
                     changeValue={setOwnerLastName}
                     label={'Owner Lastname'}
                     error={errors.ownerLastName ?? ''}
-             
-                   
                 />
 
                 <FormInput 
@@ -215,11 +161,7 @@ const NewDog = () => {
                     accept="image/*"
                     onChange={handleImageChange}
                     />
-
-                
-
-
-
+                    
                 <button onClick={handleSave}>Save</button>   
             </form>
             
