@@ -1,16 +1,16 @@
 .list-item {
     display: flex;
     
-    /* border: 1px solid black; */
+
     padding:  10px 15px;
-    /* color: rgb(238, 238, 238); */
+
     color: rgb(52, 52, 52);
     align-items: center;
     border-radius: 10px;
 
-    /* background-image: url('/wood.jpg'); */
+
     background-color: rgb(255, 255, 255);
-    /* background-color: rgb(65 146 176); */
+
     box-shadow: 3px 2px 5px rgb(0, 0, 0);
     margin-inline: auto;
     max-width: 400px;

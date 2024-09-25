@@ -18,10 +18,12 @@ const NavMenu = () => {
                         Catalog
                     </li>
                 </Link>
-                <li className="menu-item">
-                    <span className="material-symbols-outlined menu-item-icon">
-                        add</span> New Dog
-                </li>
+                <Link to={'./newdog'} >
+                    <li className="menu-item">
+                        <span className="material-symbols-outlined menu-item-icon">
+                            add</span> New Dog
+                    </li>
+                </Link>
             </ul>
         </nav>
 

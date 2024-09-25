@@ -1,0 +1,53 @@
+.newdog-container{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newdog-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: "Poppins", sans-serif;
+
+
+}
+
+
+.form-preview-image{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 1px solid black;
+    
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+form select {
+    padding: 10px;
+    max-width: none;
+    border: 1px solid black;
+    border-radius: 10px;
+   
+}
+
+form button{
+    max-width: 500px;
+    width: 100%;
+    align-self: center;
+    padding-top: 10px;
+    background-color: rgb(233, 233, 233);
+
+    
+}
+

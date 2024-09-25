@@ -173,16 +173,9 @@ select {
         
     }
 
-    select, .age-input, label, .clear-filter-button, filter{
+    /* select, .age-input, label, .clear-filter-button, filter{
         font-size: 1.2rem;
-    }
-
-    .age-input{
-        /* max-width: 70px; */
-    }
-
-    
-
+    } */
     
 }
 

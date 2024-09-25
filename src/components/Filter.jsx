@@ -15,8 +15,6 @@ const Filter = (props) => {
         }
     }
 
-
-
     return(
         <div className="filter-overlay">
         <section className="filter-section">
