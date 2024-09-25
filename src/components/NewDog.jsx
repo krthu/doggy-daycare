@@ -18,6 +18,17 @@ const NewDog = () => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [previewImage, setPreviewImage] = useState(null);
 
+    // const [nameError, setNameError] = useState(false);
+    // const [breedError, setBreedError] = useState(null);
+    // const [sexError, setSexError] = useState(null);
+    // const [ageError, setAgeError] = useState(null);
+    // const [chipnumberError, setChipnumberError] = useState(null);
+    // const [ownerFirstNameError, setOwnerFirsError] = useState(null);
+    // const [ownerLastNameError, setOwnerLastNameError] = useState(null);
+    // const [phoneError, setPhoneError] = useState('');
+    const [errors, setErrors] = useState({});
+
+
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
@@ -29,26 +40,63 @@ const NewDog = () => {
     }
 
     const handleSave = () => {
+        const fieldsToValidate = {
+            name: {value: name, message: 'Fill in name'},
+            breed: {value: breed, message: 'Fill in breed'},
+            sex: {value: sex, message: 'Select sex'},
+            age: {value: age, message: 'Fill in age'},
+            chipNumber: {value: chipNumber, message: 'Fill in chipnumber'},
+            ownerFirstName: {value: ownerFirstName, message: 'Fill in firstname'},
+            ownerLastName: {value: ownerLastName, message: 'Fill in lastname'},
+            phone: {value: phone, message: 'Fill in phonenumber'},
+        }
+
+
+        const newErrors = {};
+
+        Object.keys(fieldsToValidate).forEach(field => {
+            if (fieldsToValidate[field].value === ''){
+                newErrors[field] = fieldsToValidate[field].message;            }
+        })
+
+        // if(name === ''){
+        //     newErrors.name = 'Fill in name';
+        // } 
+        // if(breed === ''){
+        //     newErrors.breed = 'Fill in breed';
+        // }
+
+
+
         
 
-        console.log('Upload image and get url');
+        setErrors(newErrors);
 
-
-        const dog = {
-            name : name,
-            sex : sex,
-            breed : breed,
-            img: 'image link',
-            present: false,
-            age : age,
-            chipNumber : chipNumber,
-            owner : {
-                name : ownerFirstName,
-                lastName : ownerLastName,
-                phoneNumber : phone
+        if (Object.keys(newErrors).length <= 0){
+            if (selectedImage){
+                console.log('Upload image and get url');
             }
+
+
+            const dog = {
+                name : name,
+                sex : sex,
+                breed : breed,
+                img: 'image link',
+                present: false,
+                age : age,
+                chipNumber : chipNumber,
+                owner : {
+                    name : ownerFirstName,
+                    lastName : ownerLastName,
+                    phoneNumber : phone
+                }
+            }
+            console.log('Save this dog please!')
+            console.log(dog);
         }
-        console.log(dog);
+
+
     }
 
     return(
@@ -57,15 +105,17 @@ const NewDog = () => {
             <form className="newdog-form">
                 <FormInput 
                     value={name}
-                    placeholder={'Placeholder'}
+                    placeholder={'Name'}
                     changeValue={setName}
                     label={'Name'}
+                    error={errors.name ?? ''}
                 />
                 <FormInput 
                     value={breed}
                     placeholder={'Breed'}
                     changeValue={setBreed}
                     label={'Breed'}
+                    error={errors.breed ?? ''}
                 />
 
                 
@@ -97,14 +147,17 @@ const NewDog = () => {
                     </label>
                 </div> */}
                 <div className="form-row">
-                <label className="form-row-label">Gender</label>
+                <label className="form-row-label">Sex</label>
                     <DropdownInput 
                         selectedOption = {sex}
                         handleOptionChange = {(e) => { setSex(e.target.value)}}
                         noSelectionText = 'Select sex'
                         options = {['male', 'female']}
+                        // id='form-gender'
+                    
                     
                     />
+                    <span className="form-error-message">{errors.sex}</span>
                 </div>
 
 
@@ -114,12 +167,14 @@ const NewDog = () => {
                     changeValue={setAge}
                     label={'Age'}
                     type={'Number'}
+                    error={errors.age ?? ''}
                 />
                 <FormInput 
                     value={chipNumber}
                     placeholder={'Chipnumber'}
                     changeValue={setChipnumber}
                     label={'ChipNumber'}
+                    error={errors.chipNumber ?? ''}
                    
                 />
 
@@ -128,6 +183,7 @@ const NewDog = () => {
                     placeholder={'Firstname'}
                     changeValue={setOwnerFirstName}
                     label={'Owner Firstname'}
+                    error={errors.ownerFirstName ?? ''}
                    
                 />
 
@@ -136,6 +192,7 @@ const NewDog = () => {
                     placeholder={'LastName'}
                     changeValue={setOwnerLastName}
                     label={'Owner Lastname'}
+                    error={errors.ownerLastName ?? ''}
              
                    
                 />
@@ -145,6 +202,7 @@ const NewDog = () => {
                     placeholder={'Phonenumber'}
                     changeValue={setPhone}
                     label={'Phonenumber'}
+                    error={errors.phone ?? ''}
                    
                    
                 />
