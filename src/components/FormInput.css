@@ -1,0 +1,18 @@
+.form-row {
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;;
+
+}
+
+.form-row-label{
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.form-row-input{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 1.3rem;
+}

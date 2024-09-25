@@ -14,7 +14,7 @@ const Welcome = () => {
                     class={'catalog-link'}
                 />
             </Link>
-            <Link to={'/catalog'}>
+            <Link to={'/newdog'}>
 
                 <LargeButton 
                     icon={'add'}

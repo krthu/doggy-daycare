@@ -7,6 +7,7 @@ import Catalog from './components/Catalog';
 import Details from './components/Details';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import NewDog from './components/NewDog';
 
 function App() {
   const apiURL = 'https://api.jsonbin.io/v3/b/66ea8f34acd3cb34a886a7c8';
@@ -33,15 +34,9 @@ function App() {
       setLoading(false);
     }
   }
-
-  useEffect( () => {
-
-    
+  useEffect( () => { 
     fetchData();
-
-
   },[])
-
 
   const handleInputChange = (e) => {
       setSearchInput(e.target.value);
@@ -112,10 +107,7 @@ function App() {
     return 0;
   }
 
-
   const list = data.record.sort(sortAlphabetically);
-
-
 
   const uniqueBreeds = new Set(list.map(dog => dog.breed));
 
@@ -138,10 +130,6 @@ function App() {
     
   }
 
-
-
-
-
   const filteredList = list.filter(dog =>{
       setDefaultValues(dog);
       
@@ -155,7 +143,6 @@ function App() {
   });
 
     
-
   return (
     <div className='container'>
       <Header />
@@ -188,6 +175,10 @@ function App() {
 
           <Route path='/catalog/:chipNumber' 
             element= {<Details data={data}/>}
+          />
+
+          <Route path='/newdog'
+            element={<NewDog />} 
           />
   
 
