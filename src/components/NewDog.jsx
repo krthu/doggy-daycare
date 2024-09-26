@@ -3,6 +3,7 @@ import FormInput from "./FormInput";
 import placeholderImage from '../assets/placeholder2.png';
 import DropdownInput from './DropdownInput'
 import './NewDog.css';
+import Toast from "./Toast";
 
 
 const NewDog = () => {
@@ -20,7 +21,27 @@ const NewDog = () => {
 
     const [errors, setErrors] = useState({});
 
+    const [toast, setToast] = useState({
+        show: false,
+        message: '',
+        type: 'info',
+    })
 
+    const triggerToast = (message, type = 'info', short=true) => {
+        setToast({
+            show: true,
+            message: message,
+            type: type,
+            short: short
+        })
+    }
+
+    const dismissToast = () => {
+        setToast({
+            show: false,
+            message:''
+        })
+    }
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
@@ -66,7 +87,8 @@ const NewDog = () => {
         setPreviewImage(null)
     }
 
-    const handleSave = () => {
+    const handleSave = (e) => {
+        e.preventDefault();
         const newErrors = getErrors()
 
         setErrors(newErrors);
@@ -93,8 +115,12 @@ const NewDog = () => {
             console.log('API -> Save this dog please!')
             console.log(dog);
             clearFields();
-
+            triggerToast('New Dog saved!', 'success');
+        } else{
+            triggerToast('Failed to save please fill in all fields!', 'error');
         }
+        
+        
     }
 
     return (
@@ -180,6 +206,15 @@ const NewDog = () => {
                 <button onClick={handleSave}>Save</button>
               
             </form>
+            {toast.show && 
+             <Toast 
+                message={toast.message}
+                type={toast.type}
+                short={toast.short}
+                onClose={dismissToast}
+            />
+             } 
+
         </div>
     )
 }
