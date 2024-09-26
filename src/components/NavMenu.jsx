@@ -6,7 +6,7 @@ const NavMenu = () => {
     return (
         <nav>
             <ul className="menu-list">
-             
+
                 <Link to={'./catalog/'}>
                     <li className="menu-item"><span className="material-symbols-outlined menu-item-icon">
                         list</span>

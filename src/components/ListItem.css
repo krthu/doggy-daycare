@@ -1,6 +1,6 @@
 .list-item {
     display: flex;
-    padding:  10px 15px;
+    padding: 10px 15px;
     color: rgb(52, 52, 52);
     align-items: center;
     border-radius: 10px;
@@ -14,7 +14,7 @@
 
 .list-item p {
     text-transform: capitalize;
-    
+
 }
 
 .list-image {
@@ -51,26 +51,26 @@
     background-color: rgb(32, 239, 32);
 }
 
-.varning{
+.varning {
     background-color: yellow;
 }
 
 
 @media (min-width: 1024px) {
-    .list-item:hover{
+    .list-item:hover {
         background-color: rgb(65 146 176);
     }
 }
 
 
 @media (min-width: 1500px) {
-    .list-image{
+    .list-image {
         height: 80px;
         width: 80px;
     }
 
-    .list-name{
+    .list-name {
         font-size: 1.6rem;
     }
-    
+
 }

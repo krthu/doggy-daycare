@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-html, body {
+
+html,
+body {
   background-color: rgb(65 146 176);
 }
 
@@ -23,7 +25,9 @@ a {
 
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "Poppins", sans-serif;
 }
 
@@ -41,7 +45,7 @@ p {
 
 
 
-main{
+main {
   padding: 10px;
   overflow-y: scroll;
   flex-grow: 1;
@@ -50,12 +54,12 @@ main{
 
 }
 
-footer{
+footer {
   background-color: white;
   border-top: 1px solid black;
 }
 
-button{
+button {
   padding: 5px 10px;
   background-color: rgb(228, 228, 228);
   border-radius: 10px;
@@ -65,11 +69,13 @@ button{
 }
 
 @media (min-width: 1400px) {
-  main, header{
+
+  main,
+  header {
     padding-inline: 80px;
   }
 
-  p{
+  p {
     font-size: 1.3rem;
   }
 }

@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import ListItem from "./ListItem";
+import { useState } from "react";
 import List from "./List";
 import "./Catalog.css";
 
@@ -13,9 +12,9 @@ const Catalog = (props) => {
     const isFiltersSet = () => {
         if (props.searchInput != '' || props.selectedBreed != ''
             || props.selectedSex != '' || props.selectedPresentOption != null
-            || props.minAge != '' || props.maxAge != ''){
-                return true;
-            }
+            || props.minAge != '' || props.maxAge != '') {
+            return true;
+        }
         return false;
     }
 
@@ -31,7 +30,7 @@ const Catalog = (props) => {
             </section>
 
             {isFilterMenuOpen && (
-                <Filter 
+                <Filter
                     list={props.filteredList}
                     searchInput={props.searchInput}
                     handleInputChange={props.handleInputChange}
@@ -48,7 +47,7 @@ const Catalog = (props) => {
                     handlePresentOptionChange={props.handlePresentOptionChange}
                     clearFilter={props.clearFilter}
                     setIsFilterMenuOpen={setIsFilterMenuOpen}
-                
+
                 />
             )}
             <List list={props.list} />

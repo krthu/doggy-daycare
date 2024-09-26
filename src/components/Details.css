@@ -7,32 +7,25 @@
     border-radius: 10px;
     max-width: 700px;
     margin: 0 auto;
-
 }
 
-.details-image-section{
+.details-image-section {
     display: flex;
     justify-content: center;
     position: relative;
     max-width: 100%;
-    
 }
 
 .large-profile-image {
-
     max-width: 200px;
-
     aspect-ratio: 1;
     border-radius: 50%;
     border: 1px solid rgb(0, 0, 0);
-  
     align-self: center;
     object-fit: cover;
 }
 
-
-
-.information-section{
+.information-section {
     padding: 10px;
     background-color: #ffffff;
     color: black;
@@ -40,17 +33,14 @@
     margin: 10px;
     display: flex;
     flex-direction: column;
-    
+
 }
 
 .name {
     display: flex;
     justify-content: center;
     align-items: center;
-
     font-size: 2rem;
-    
-
 }
 
 .gender-span {
@@ -58,7 +48,7 @@
     margin-left: 10px;
 }
 
-.back-arrow{
+.back-arrow {
     align-self: flex-start;
     font-size: 2rem;
     padding: 5px;
@@ -66,77 +56,73 @@
     left: 10px;
 }
 
-.back-link{
+.back-link {
     align-self: flex-start;
-    
 }
 
 
-.details-info-item{
+.details-info-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-block: 5px;
-    border-bottom: 1px solid rgb(0, 0, 0); 
+    border-bottom: 1px solid rgb(0, 0, 0);
     padding-inline: 5px;
 }
 
 .details-label {
-   
     margin-right: 5px;
     font-size: 1rem;
     font-weight: 700;
 }
 
-.details-value{
+.details-value {
     text-transform: capitalize;
     font-size: 1.2rem;
 }
 
 .details-info-section {
- 
     padding: 10px 5px;
-
 }
 
 .large-profile-image.details-present {
     border: 5px solid green;
 }
-.check-in-button{
+
+.check-in-button {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
 }
 
-.checked-in{
+.checked-in {
     background-color: green;
 }
 
 @media (min-width: 1500px) {
 
-
-    .details-value{
+    .details-value {
         font-size: 1.5rem;
     }
 
-    .details-label{
+    .details-label {
         font-size: 1.3rem;
     }
 
-    .name, .gender-span, .back-arrow{
+    .name,
+    .gender-span,
+    .back-arrow {
         font-size: 3rem;
     }
 
-    .check-in-button{
+    .check-in-button {
         font-size: 1.5rem;
     }
 
-    .large-profile-image{
+    .large-profile-image {
         max-width: 300px;
-
     }
 
-    .information-section{
+    .information-section {
         padding: 40px;
     }
-
 }

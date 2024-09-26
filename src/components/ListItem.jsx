@@ -3,15 +3,15 @@ import './ListItem.css';
 import placeholderImage from '../assets/placeholder2.png';
 
 const ListItem = (props) => {
-    
+
     const dog = props.dog;
 
     console.log(props.dog.present);
 
     const getDogPresentColor = (value) => {
-        if (value === true){
+        if (value === true) {
             return 'present'
-        } else if (value === false){
+        } else if (value === false) {
             return ''
         } else {
             return 'varning'
@@ -22,8 +22,8 @@ const ListItem = (props) => {
         <Link to={`/catalog/${dog.chipNumber}`}>
 
             <li className="list-item">
-                <img className="list-image" 
-                    src={dog.img ?? './placeholder2.jpg'} 
+                <img className="list-image"
+                    src={dog.img ?? './placeholder2.jpg'}
                     alt="" onError={(e) => e.target.src = placeholderImage}
                 />
                 <div className="list-info-container">
@@ -31,7 +31,7 @@ const ListItem = (props) => {
                     <p>{dog.breed}</p>
                 </div>
                 <div className={`circle ${getDogPresentColor(dog.present)}`}>
-           
+
                 </div>
             </li>
 

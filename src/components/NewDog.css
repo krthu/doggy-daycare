@@ -1,9 +1,9 @@
-.newdog-container{
+.newdog-container {
     max-width: 600px;
     margin: 0 auto;
 }
 
-.newdog-form{
+.newdog-form {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -11,7 +11,7 @@
 }
 
 
-.form-preview-image{
+.form-preview-image {
     width: 100px;
     height: 100px;
     object-fit: cover;
@@ -36,7 +36,7 @@ form select {
     border-radius: 10px;
 }
 
-form button{
+form button {
     max-width: 500px;
     width: 100%;
     align-self: center;
@@ -44,7 +44,6 @@ form button{
     background-color: rgb(233, 233, 233);
 }
 
-.form-file-input{
+.form-file-input {
     align-self: center;
 }
-

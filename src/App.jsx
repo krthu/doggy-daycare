@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, Route, Routes } from 'react-router-dom';
-
+import { Route, Routes } from 'react-router-dom';
 import './App.css'
 import Welcome from './components/Welcome';
 import Catalog from './components/Catalog';
@@ -23,7 +22,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-     
+
       const res = await fetch(apiURL);
       const json = await res.json();
       setData(json.record);
@@ -34,35 +33,35 @@ function App() {
       setLoading(false);
     }
   }
-  useEffect( () => { 
+  useEffect(() => {
     fetchData();
-  },[])
+  }, [])
 
   const handleInputChange = (e) => {
-      setSearchInput(e.target.value);
+    setSearchInput(e.target.value);
   }
 
   const handleChangeBreed = (e) => {
-      setSelectedBreed(e.target.value);
+    setSelectedBreed(e.target.value);
 
   }
 
   const handleChangeSex = (e) => {
-      setSelectedSex(e.target.value);
+    setSelectedSex(e.target.value);
   }
 
   const handleMinAgeChange = (e) => {
     const num = e.target.value;
-    
-    if (!isNaN(num) && num >= 0){
+
+    if (!isNaN(num) && num >= 0) {
       setMinAge(e.target.value);
     }
   }
 
   const handleMaxAgeChange = (e) => {
     const num = e.target.value;
-    
-    if (!isNaN(num) && num >= 0){
+
+    if (!isNaN(num) && num >= 0) {
       setMaxAge(e.target.value);
     }
   }
@@ -78,7 +77,7 @@ function App() {
 
   const handlePresentOptionChange = (e) => {
 
-    switch (e.target.value){
+    switch (e.target.value) {
       case 'present':
         setSelectedPresentOption(true);
         break;
@@ -99,10 +98,10 @@ function App() {
   }
   const sortAlphabetically = (a, b) => {
     if (a.name < b.name) {
-        return -1;
+      return -1;
     }
     if (a.name > b.name) {
-        return 1;
+      return 1;
     }
     return 0;
   }
@@ -112,74 +111,74 @@ function App() {
   const uniqueBreeds = new Set(list.map(dog => dog.breed));
 
   const setDefaultValues = (dog) => {
-    if (!dog.name){
+    if (!dog.name) {
       dog.name = ('Not set');
     }
-    if (!dog.breed){
+    if (!dog.breed) {
       dog.breed = ('Not set');
     }
-    if (!dog.sex){
+    if (!dog.sex) {
       dog.sex = ('Not set');
-    }  
-    if (dog.present === null){
+    }
+    if (dog.present === null) {
       dog.present = ('Not set');
     }
-    if (!dog.age){
+    if (!dog.age) {
       dog.age = ('Not set');
     }
-    
+
   }
 
-  const filteredList = list.filter(dog =>{
-      setDefaultValues(dog);
-      
-      return(
+  const filteredList = list.filter(dog => {
+    setDefaultValues(dog);
+
+    return (
       dog.name.toLowerCase().includes(searchInput.toLowerCase()) &&
       (dog.breed.toLowerCase() === (selectedBreed.toLowerCase()) || selectedBreed === '') &&
       (dog.sex.toLowerCase() === (selectedSex.toLowerCase()) || selectedSex === '') &&
       ((minAge === '' || dog.age >= minAge) && (maxAge === '' || dog.age <= maxAge)) &&
       (dog.present === selectedPresentOption || selectedPresentOption === null)
-      )
+    )
   });
 
-    
+
   return (
     <div className='container'>
       <Header />
       <main>
         <Routes>
           <Route path='/'
-            element = {<Welcome />} />
- 
+            element={<Welcome />} />
+
           <Route path='/catalog'
-            element = { <Catalog 
-                        //data={data}
-                          list={filteredList}
-                          searchInput={searchInput}
-                          handleInputChange={handleInputChange}
-                          selectedBreed={selectedBreed}
-                          handleChangeBreed={handleChangeBreed}
-                          selectedSex={selectedSex}
-                          handleChangeSex={handleChangeSex}
-                          minAge={minAge}
-                          handleMinAgeChange={handleMinAgeChange}
-                          maxAge={maxAge}
-                          handleMaxAgeChange={handleMaxAgeChange}
-                          uniqueBreeds={uniqueBreeds}
-                          selectedPresentOption={selectedPresentOption}
-                          handlePresentOptionChange={handlePresentOptionChange}
-                          clearFilter={clearFilterSelections}
-                        />}
+            element={<Catalog
+              //data={data}
+              list={filteredList}
+              searchInput={searchInput}
+              handleInputChange={handleInputChange}
+              selectedBreed={selectedBreed}
+              handleChangeBreed={handleChangeBreed}
+              selectedSex={selectedSex}
+              handleChangeSex={handleChangeSex}
+              minAge={minAge}
+              handleMinAgeChange={handleMinAgeChange}
+              maxAge={maxAge}
+              handleMaxAgeChange={handleMaxAgeChange}
+              uniqueBreeds={uniqueBreeds}
+              selectedPresentOption={selectedPresentOption}
+              handlePresentOptionChange={handlePresentOptionChange}
+              clearFilter={clearFilterSelections}
+            />}
           />
 
-          <Route path='/catalog/:chipNumber' 
-            element= {<Details data={data}/>}
+          <Route path='/catalog/:chipNumber'
+            element={<Details data={data} />}
           />
 
           <Route path='/newdog'
-            element={<NewDog />} 
+            element={<NewDog />}
           />
-        </Routes>  
+        </Routes>
       </main>
       <Footer />
     </div>
