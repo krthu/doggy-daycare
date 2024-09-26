@@ -1,4 +1,5 @@
 import DropDownInput from "./DropdownInput";
+import "./Filter.css";
 
 const Filter = (props) => {
 
@@ -22,7 +23,6 @@ const Filter = (props) => {
             close
             </span>
             <h2>Filter</h2>
-            
         
             <section className="filter-option">
                 <label>Breed</label>

@@ -1,19 +1,15 @@
 .form-row {
     display: flex;
     flex-direction: column;
-
-
 }
 
 .form-row-label{
     font-size: 0.8rem;
     font-weight: 500;
     margin-left: 10px;
-
 }
 
 .form-row-input{
-
     padding: 10px;
     border-radius: 10px;
     border: 1px solid black;
@@ -24,5 +20,4 @@
     font-size: 0.8rem;
     color: red;
     margin-left: 10px;
-
 }

@@ -73,7 +73,7 @@ const NewDog = () => {
                     phoneNumber : phone
                 }
             }
-            console.log('Save this dog please!')
+            console.log('API -> Save this dog please!')
             console.log(dog);
         }
     }
@@ -155,7 +155,7 @@ const NewDog = () => {
                 <img src={previewImage ? previewImage : placeholderImage}
                     className="form-preview-image"
                 />
-                <input
+                <input className="form-file-input"
                     type="file"
                     id="imageUpload"
                     accept="image/*"

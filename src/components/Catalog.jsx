@@ -50,15 +50,10 @@ const Catalog = (props) => {
                     setIsFilterMenuOpen={setIsFilterMenuOpen}
                 
                 />
-
             )}
-
             <List list={props.list} />
-
         </>
-
     )
-
 }
 
 export default Catalog;
