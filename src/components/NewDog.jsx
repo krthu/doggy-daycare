@@ -53,6 +53,19 @@ const NewDog = () => {
         return newErrors;
     }
 
+    const clearFields = () => {
+        setName('');
+        setBreed('');
+        setSex('');
+        setAge('');
+        setChipnumber('');
+        setOwnerFirstName('');
+        setOwnerLastName('');
+        setPhone('');
+        setSelectedImage(null);
+        setPreviewImage(null)
+    }
+
     const handleSave = () => {
         const newErrors = getErrors()
 
@@ -79,6 +92,7 @@ const NewDog = () => {
             }
             console.log('API -> Save this dog please!')
             console.log(dog);
+            clearFields();
 
         }
     }
@@ -164,6 +178,7 @@ const NewDog = () => {
                 />
 
                 <button onClick={handleSave}>Save</button>
+              
             </form>
         </div>
     )
