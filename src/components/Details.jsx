@@ -7,7 +7,7 @@ import placeholderImage from '../assets/placeholder.png';
 
 const Details = (props) => {
     if (!props.data) {
-        return <p>Loading dog...</p>;
+        return <p className='status-message'>Loading dog...</p>;
     }
 
     let list = props.data.record
@@ -15,18 +15,8 @@ const Details = (props) => {
     const chipNumber = params.chipNumber;
     const dog = list.find(dog => dog.chipNumber === chipNumber)
 
-    const getDogPresentColor = (value) => {
-        if (value === true) {
-            return 'present'
-        } else if (value === false) {
-            return ''
-        } else {
-            return 'varning'
-        }
-    }
-
     if (!dog) {
-        return <p>No dog found!</p>
+        return <p className='status-message'>No dog found!</p>
     }
     return (
         <div className="details-container">

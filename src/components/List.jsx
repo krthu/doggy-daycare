@@ -12,7 +12,7 @@ const List = (props) => {
 
                 ))
             ) : (
-                <p className="list-empty">{"No dogs found!"}</p>
+                <p className="status-message">{"No dogs found!"}</p>
             )
             }
 
