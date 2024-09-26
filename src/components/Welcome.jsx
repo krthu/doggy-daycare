@@ -22,9 +22,7 @@ const Welcome = () => {
                     class={'newdog-link'}
                 />
             </Link>
-
         </div>
-
     )
 }
 

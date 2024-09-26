@@ -1,6 +1,5 @@
 header {
     display: flex;
-
     background-color: white;
     padding: 0px 10px;
     justify-content: space-between;
@@ -8,22 +7,16 @@ header {
     border-bottom: 1px solid black;
 }
 
-
 nav{
-
     align-self: flex-end;
-
 }
 
 .menu-list{
     list-style: none;
-   
     display: flex;
     justify-content: space-around;
     margin-bottom: 10px;
-    gap: 10px;
-  
-    
+    gap: 10px;  
 }
 
 .menu-item{
@@ -32,14 +25,9 @@ nav{
     background-color: white;
     border-radius: 10px;
     display: flex;
-
     align-items: center;
     font-size: 0.7rem;
-    gap: 5px;
-
-
-
-    
+    gap: 5px; 
 }
 
 .header-logo{

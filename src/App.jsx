@@ -121,7 +121,7 @@ function App() {
     if (!dog.sex){
       dog.sex = ('Not set');
     }  
-    if (!dog.present){
+    if (dog.present === null){
       dog.present = ('Not set');
     }
     if (!dog.age){
@@ -150,7 +150,6 @@ function App() {
         <Routes>
           <Route path='/'
             element = {<Welcome />} />
-
  
           <Route path='/catalog'
             element = { <Catalog 
@@ -180,15 +179,9 @@ function App() {
           <Route path='/newdog'
             element={<NewDog />} 
           />
-  
-
-        </Routes>
-
-       
+        </Routes>  
       </main>
       <Footer />
-
-
     </div>
   )
 }

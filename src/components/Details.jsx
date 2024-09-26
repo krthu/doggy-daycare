@@ -10,21 +10,24 @@ const Details = (props) => {
         return <p>Loading dog...</p>;
     }
 
-
     let list = props.data.record
-
-
     const params = useParams();
-
     const chipNumber = params.chipNumber;
     const dog = list.find(dog => dog.chipNumber === chipNumber)
+
+    const getDogPresentColor = (value) => {
+        if (value === true){
+            return 'present'
+        } else if (value === false){
+            return ''
+        } else {
+            return 'varning'
+        }
+    }
 
     if (!dog) {
         return <p>No dog found!</p>
     }
-
-
-
     return (
         <div className="details-container">
             <div className="details-image-section">
@@ -48,7 +51,6 @@ const Details = (props) => {
                     <DetailsInfoItem label={'Chip number'} value={dog.chipNumber} />
                     <DetailsInfoItem label={'Owner'} value={`${dog.owner.name ?? 'Not set'} ${dog.owner.lastName ?? 'Not set'}`} />
                     <DetailsInfoItem label={'Phone'} value={dog.owner.phoneNumber} />
-
                  </section> 
                  <button className={`check-in-button ${dog.present ? 'checked-in' : ''}`}>Check {dog.present ? 'out' : 'in'}</button>
             </section>

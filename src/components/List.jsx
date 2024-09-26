@@ -2,13 +2,7 @@
 import ListItem from "./ListItem";
 
 const List = (props) => {
-
     const list = props.list
-
-
-
-    
-
     return (
       
         <ul className="catalog-list">
@@ -23,10 +17,7 @@ const List = (props) => {
             }
 
         </ul>
-
     )
-
-
 }
 
 export default List;

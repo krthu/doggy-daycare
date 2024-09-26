@@ -4,11 +4,7 @@
   box-sizing: border-box;
 }
 html, body {
-
-
-  /* background-image: url('/grass.jpg'); */
   background-color: rgb(65 146 176);
-  
 }
 
 a {
@@ -23,16 +19,12 @@ a {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-
-
-  /* padding: 10px; */
   font-family: "Lora", serif;
 
 }
 
 h1, h2, h3 {
   font-family: "Poppins", sans-serif;
-
 }
 
 h1 {
@@ -41,10 +33,6 @@ h1 {
   padding-block: 10px;
   display: inline-block;
   text-align: center;
-  /* border: 1px solid black; */
-
-
-
 }
 
 p {
@@ -57,10 +45,6 @@ main{
   padding: 10px;
   overflow-y: scroll;
   flex-grow: 1;
-  /* max-width: 2000px;
-  width: 100%;
-  align-self: center; */
-
   background-color: rgba(255, 255, 255, 0.4);
 
 
@@ -88,6 +72,4 @@ button{
   p{
     font-size: 1.3rem;
   }
-
-  
 }

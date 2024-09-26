@@ -1,12 +1,7 @@
-import { useState } from "react";
+
 import { Link } from "react-router-dom";
 
 const NavMenu = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    }
 
     return (
         <nav>
@@ -26,7 +21,6 @@ const NavMenu = () => {
                 </Link>
             </ul>
         </nav>
-
     )
 }
 

@@ -53,7 +53,7 @@ const Filter = (props) => {
                         onChange={props.handleMinAgeChange} 
                         placeholder="from" 
                         className="age-input"/>
-                    <p> - </p>
+                     - 
                     <input type="Number" 
                         value={props.maxAge} 
                         onChange={props.handleMaxAgeChange} 

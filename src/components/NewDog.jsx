@@ -31,7 +31,7 @@ const NewDog = () => {
         }
     }
 
-    const handleSave = () => {
+    const getErrors = () => {
         const fieldsToValidate = {
             name: {value: name, message: 'Fill in name'},
             breed: {value: breed, message: 'Fill in breed'},
@@ -43,13 +43,17 @@ const NewDog = () => {
             phone: {value: phone, message: 'Fill in phonenumber'},
         }
 
-
         const newErrors = {};
 
         Object.keys(fieldsToValidate).forEach(field => {
             if (fieldsToValidate[field].value === ''){
                 newErrors[field] = fieldsToValidate[field].message;            }
         })
+        return newErrors;
+    }
+
+    const handleSave = () => {
+        const newErrors = getErrors()
 
         setErrors(newErrors);
 
@@ -57,7 +61,6 @@ const NewDog = () => {
             if (selectedImage){
                 console.log('Upload image and get url');
             }
-
 
             const dog = {
                 name : name,
@@ -75,6 +78,7 @@ const NewDog = () => {
             }
             console.log('API -> Save this dog please!')
             console.log(dog);
+            
         }
     }
 
@@ -104,9 +108,7 @@ const NewDog = () => {
                         handleOptionChange = {(e) => { setSex(e.target.value)}}
                         noSelectionText = 'Select sex'
                         options = {['male', 'female']}
-                        // id='form-gender'
-                    
-                    
+
                     />
                     <span className="form-error-message">{errors.sex}</span>
                 </div>
@@ -149,8 +151,6 @@ const NewDog = () => {
                     changeValue={setPhone}
                     label={'Phonenumber'}
                     error={errors.phone ?? ''}
-                   
-                   
                 />
                 <img src={previewImage ? previewImage : placeholderImage}
                     className="form-preview-image"
@@ -164,9 +164,6 @@ const NewDog = () => {
                     
                 <button onClick={handleSave}>Save</button>   
             </form>
-            
-
-
         </div>
     )
 }

@@ -1,26 +1,15 @@
 .list-item {
     display: flex;
-    
-
     padding:  10px 15px;
-
     color: rgb(52, 52, 52);
     align-items: center;
     border-radius: 10px;
-
-
     background-color: rgb(255, 255, 255);
-
     box-shadow: 3px 2px 5px rgb(0, 0, 0);
     margin-inline: auto;
     max-width: 400px;
     border: 1px solid rgb(199, 242, 255);
     transition: background-color 0.3s;
-    
-}
-
-.list-item:hover{
-    background-color: rgb(65 146 176);
 }
 
 .list-item p {
@@ -45,7 +34,6 @@
 .list-name {
     font-size: 1.3rem;
     font-weight: 700;
-    /* color: rgb(255, 255, 255); */
     color: black;
     font-family: "Poppins", sans-serif;
     letter-spacing: 0.08rem;
@@ -62,6 +50,18 @@
 .present {
     background-color: rgb(32, 239, 32);
 }
+
+.varning{
+    background-color: yellow;
+}
+
+
+@media (min-width: 1024px) {
+    .list-item:hover{
+        background-color: rgb(65 146 176);
+    }
+}
+
 
 @media (min-width: 1500px) {
     .list-image{
