@@ -87,7 +87,8 @@ const NewDog = () => {
         setPreviewImage(null)
     }
 
-    const handleSave = () => {
+    const handleSave = (e) => {
+        e.preventDefault();
         const newErrors = getErrors()
 
         setErrors(newErrors);
