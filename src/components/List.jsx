@@ -2,15 +2,9 @@
 import ListItem from "./ListItem";
 
 const List = (props) => {
-
     const list = props.list
-
-
-
-    
-
     return (
-      
+
         <ul className="catalog-list">
             {list.length > 0 ? (
                 list.map((dog, index) => (
@@ -23,10 +17,7 @@ const List = (props) => {
             }
 
         </ul>
-
     )
-
-
 }
 
 export default List;

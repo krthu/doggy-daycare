@@ -8,7 +8,7 @@ const Welcome = () => {
         <div className="welcome-container">
 
             <Link to={'/catalog'}>
-                <LargeButton 
+                <LargeButton
                     icon={'list'}
                     text={'Catalog'}
                     class={'catalog-link'}
@@ -16,15 +16,13 @@ const Welcome = () => {
             </Link>
             <Link to={'/newdog'}>
 
-                <LargeButton 
+                <LargeButton
                     icon={'add'}
                     text={'New Dog'}
                     class={'newdog-link'}
                 />
             </Link>
-
         </div>
-
     )
 }
 

@@ -1,17 +1,12 @@
-import { useState } from "react";
+
 import { Link } from "react-router-dom";
 
 const NavMenu = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    }
 
     return (
         <nav>
             <ul className="menu-list">
-             
+
                 <Link to={'./catalog/'}>
                     <li className="menu-item"><span className="material-symbols-outlined menu-item-icon">
                         list</span>
@@ -26,7 +21,6 @@ const NavMenu = () => {
                 </Link>
             </ul>
         </nav>
-
     )
 }
 

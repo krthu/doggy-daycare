@@ -3,7 +3,7 @@ import "./footer.css"
 const Footer = () => {
 
 
-    return(
+    return (
         <footer>
             <p>&copy; Happy Tails Resort {new Date().getFullYear()}</p>
         </footer>

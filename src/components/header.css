@@ -1,6 +1,5 @@
 header {
     display: flex;
-
     background-color: white;
     padding: 0px 10px;
     justify-content: space-between;
@@ -8,53 +7,43 @@ header {
     border-bottom: 1px solid black;
 }
 
-
-nav{
-
+nav {
     align-self: flex-end;
-
 }
 
-.menu-list{
+.menu-list {
     list-style: none;
-   
     display: flex;
     justify-content: space-around;
     margin-bottom: 10px;
     gap: 10px;
-  
-    
 }
 
-.menu-item{
+.menu-item {
     padding: 5px 10px;
     border: 1px rgb(0, 0, 0) solid;
     background-color: white;
     border-radius: 10px;
     display: flex;
-
     align-items: center;
     font-size: 0.7rem;
     gap: 5px;
-
-
-
-    
 }
 
-.header-logo{
+.header-logo {
     max-width: 200px;
 }
 
-.menu-item-icon{
+.menu-item-icon {
     font-size: 1.5rem;
 }
 
-@media (min-width: 1000px){
-    .menu-item-icon{
+@media (min-width: 1000px) {
+    .menu-item-icon {
         font-size: 1.8rem;
     }
-    .menu-item{
+
+    .menu-item {
         font-size: 0.9rem;
     }
 }

@@ -24,72 +24,77 @@ const NewDog = () => {
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
-        if (file){
+        if (file) {
             setSelectedImage(file);
             const imageUrl = URL.createObjectURL(file);
             setPreviewImage(imageUrl);
         }
     }
 
-    const handleSave = () => {
+    const getErrors = () => {
         const fieldsToValidate = {
-            name: {value: name, message: 'Fill in name'},
-            breed: {value: breed, message: 'Fill in breed'},
-            sex: {value: sex, message: 'Select sex'},
-            age: {value: age, message: 'Fill in age'},
-            chipNumber: {value: chipNumber, message: 'Fill in chipnumber'},
-            ownerFirstName: {value: ownerFirstName, message: 'Fill in firstname'},
-            ownerLastName: {value: ownerLastName, message: 'Fill in lastname'},
-            phone: {value: phone, message: 'Fill in phonenumber'},
+            name: { value: name, message: 'Fill in name' },
+            breed: { value: breed, message: 'Fill in breed' },
+            sex: { value: sex, message: 'Select sex' },
+            age: { value: age, message: 'Fill in age' },
+            chipNumber: { value: chipNumber, message: 'Fill in chipnumber' },
+            ownerFirstName: { value: ownerFirstName, message: 'Fill in firstname' },
+            ownerLastName: { value: ownerLastName, message: 'Fill in lastname' },
+            phone: { value: phone, message: 'Fill in phonenumber' },
         }
-
 
         const newErrors = {};
 
         Object.keys(fieldsToValidate).forEach(field => {
-            if (fieldsToValidate[field].value === ''){
-                newErrors[field] = fieldsToValidate[field].message;            }
+            if (fieldsToValidate[field].value === '') {
+                newErrors[field] = fieldsToValidate[field].message;
+            }
         })
+        return newErrors;
+    }
+
+    const handleSave = () => {
+        const newErrors = getErrors()
 
         setErrors(newErrors);
 
-        if (Object.keys(newErrors).length <= 0){
-            if (selectedImage){
+        if (Object.keys(newErrors).length <= 0) {
+            if (selectedImage) {
                 console.log('Upload image and get url');
             }
 
-
             const dog = {
-                name : name,
-                sex : sex,
-                breed : breed,
+                name: name,
+                sex: sex,
+                breed: breed,
                 img: 'image link',
                 present: false,
-                age : age,
-                chipNumber : chipNumber,
-                owner : {
-                    name : ownerFirstName,
-                    lastName : ownerLastName,
-                    phoneNumber : phone
+                age: age,
+                chipNumber: chipNumber,
+                owner: {
+                    name: ownerFirstName,
+                    lastName: ownerLastName,
+                    phoneNumber: phone
                 }
             }
-            console.log('Save this dog please!')
+            console.log('API -> Save this dog please!')
             console.log(dog);
+
         }
     }
 
-    return(
+    return (
         <div className="newdog-container">
             <h2>New Dog</h2>
             <form className="newdog-form">
-                <FormInput 
+                <FormInput
                     value={name}
                     placeholder={'Name'}
                     changeValue={setName}
                     label={'Name'}
                     error={errors.name ?? ''}
                 />
-                <FormInput 
+                <FormInput
                     value={breed}
                     placeholder={'Breed'}
                     changeValue={setBreed}
@@ -98,20 +103,18 @@ const NewDog = () => {
                 />
 
                 <div className="form-row">
-                <label className="form-row-label">Sex</label>
-                    <DropdownInput 
-                        selectedOption = {sex}
-                        handleOptionChange = {(e) => { setSex(e.target.value)}}
-                        noSelectionText = 'Select sex'
-                        options = {['male', 'female']}
-                        // id='form-gender'
-                    
-                    
+                    <label className="form-row-label">Sex</label>
+                    <DropdownInput
+                        selectedOption={sex}
+                        handleOptionChange={(e) => { setSex(e.target.value) }}
+                        noSelectionText='Select sex'
+                        options={['male', 'female']}
+
                     />
                     <span className="form-error-message">{errors.sex}</span>
                 </div>
 
-                <FormInput 
+                <FormInput
                     value={age}
                     placeholder={'Age'}
                     changeValue={setAge}
@@ -119,7 +122,7 @@ const NewDog = () => {
                     type={'Number'}
                     error={errors.age ?? ''}
                 />
-                <FormInput 
+                <FormInput
                     value={chipNumber}
                     placeholder={'Chipnumber'}
                     changeValue={setChipnumber}
@@ -127,7 +130,7 @@ const NewDog = () => {
                     error={errors.chipNumber ?? ''}
                 />
 
-                <FormInput 
+                <FormInput
                     value={ownerFirstName}
                     placeholder={'Firstname'}
                     changeValue={setOwnerFirstName}
@@ -135,7 +138,7 @@ const NewDog = () => {
                     error={errors.ownerFirstName ?? ''}
                 />
 
-                <FormInput 
+                <FormInput
                     value={ownerLastName}
                     placeholder={'LastName'}
                     changeValue={setOwnerLastName}
@@ -143,30 +146,25 @@ const NewDog = () => {
                     error={errors.ownerLastName ?? ''}
                 />
 
-                <FormInput 
+                <FormInput
                     value={phone}
                     placeholder={'Phonenumber'}
                     changeValue={setPhone}
                     label={'Phonenumber'}
                     error={errors.phone ?? ''}
-                   
-                   
                 />
                 <img src={previewImage ? previewImage : placeholderImage}
                     className="form-preview-image"
                 />
-                <input
+                <input className="form-file-input"
                     type="file"
                     id="imageUpload"
                     accept="image/*"
                     onChange={handleImageChange}
-                    />
-                    
-                <button onClick={handleSave}>Save</button>   
+                />
+
+                <button onClick={handleSave}>Save</button>
             </form>
-            
-
-
         </div>
     )
 }
