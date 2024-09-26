@@ -6,8 +6,6 @@ const ListItem = (props) => {
 
     const dog = props.dog;
 
-    console.log(props.dog.present);
-
     const getDogPresentColor = (value) => {
         if (value === true) {
             return 'present'
