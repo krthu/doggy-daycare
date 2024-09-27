@@ -19,10 +19,13 @@ const Filter = (props) => {
     return (
         <div className="filter-overlay">
             <section className="filter-section">
-                <span className="material-symbols-outlined close-filter" onClick={() => props.setIsFilterMenuOpen()}>
-                    close
-                </span>
+                <div className="filter-header">
                 <h2>Filter</h2>
+                    <span className="material-symbols-outlined close-filter" onClick={() => props.setIsFilterMenuOpen()}>
+                        close
+                    </span>
+             
+                </div>
 
                 <section className="filter-option">
                     <label>Breed</label>
