@@ -5,6 +5,7 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid black;
+    
 }
 
 nav {
@@ -39,6 +40,11 @@ nav {
 }
 
 @media (min-width: 1000px) {
+    header {
+        padding-inline: 40px;
+    }
+
+
     .menu-item-icon {
         font-size: 1.8rem;
     }
