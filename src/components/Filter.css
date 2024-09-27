@@ -11,6 +11,8 @@
     
 }
 
+
+
 .filter-section {
     padding: 10px 20px 40px 20px;
     background: rgb(255, 255, 255);
@@ -22,11 +24,16 @@
     display: flex;
     flex-direction: column;
     border: 1px solid black;
+    gap: 20px;
 }
 
-.filter-section label {
-    width: 150px;
+.filter-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
 }
+
 
 select {
     text-transform: capitalize;
@@ -47,14 +54,14 @@ select {
 .filter-option {
     display: flex;
     justify-content: space-between;
-    margin-block: 10px;
+    /* margin-block: 10px; */
     align-items: center;
     border-bottom: 1px solid black;
 }
 
 .close-filter {
     font-size: 1.7rem;
-    align-self: flex-end;
+    align-self: flex-start;
 }
 
 .age-input-section {
@@ -92,4 +99,35 @@ select {
         border-radius: 10px;
     }
 
+}
+
+@media (max-height: 500px) {
+    .filter-overlay{
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .filter-section{
+        width: 100%;
+        max-width: none;
+        margin-top: 0;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        
+    
+    }
+    .filter-option{
+        grid-column: span 1;
+
+    }
+    .clear-filter-button{
+        grid-column: span 2;
+    }
+    .filter-header{
+        grid-column: span 2;
+        
+    }
 }
