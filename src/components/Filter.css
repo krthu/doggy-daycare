@@ -34,10 +34,6 @@
 
 }
 
-.filter-section label {
-    /* width: 150px; */
-    min-width: 50%;
-}
 
 select {
     text-transform: capitalize;
